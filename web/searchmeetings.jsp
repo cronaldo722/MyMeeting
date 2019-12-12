@@ -19,24 +19,24 @@
         <div class="content-nav">
             会议预定 > 查看会议
         </div>
-        <form action="ServletViewMeeting" method="post">
-            <fieldset>
-                <legend>查看会议</legend>
-                <table class="formtable">
-                    <tr>
-                        <td>会议编号：</td>
-                        <td>
-                            <input type="text" id="idmeeting" name="idmeeting" value="${idmeeting}" maxlength="20"/>
-                        </td>
-                    <tr>
-                        <td colspan="6" class="command">
-                            <input type="submit" class="clickbutton" value="查询"/>
-                            <input type="reset" class="clickbutton" value="重置"/>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-        </form>
+<%--        <form action="ServletViewMeeting" method="post">--%>
+<%--            <fieldset>--%>
+<%--                <legend>查看会议</legend>--%>
+<%--                <table class="formtable">--%>
+<%--                    <tr>--%>
+<%--                        <td>会议编号：</td>--%>
+<%--                        <td>--%>
+<%--                            <input type="text" id="idmeeting" name="idmeeting" value="${idmeeting}" maxlength="20"/>--%>
+<%--                        </td>--%>
+<%--                    <tr>--%>
+<%--                        <td colspan="6" class="command">--%>
+<%--                            <input type="submit" class="clickbutton" value="查询"/>--%>
+<%--                            <input type="reset" class="clickbutton" value="重置"/>--%>
+<%--                        </td>--%>
+<%--                    </tr>--%>
+<%--                </table>--%>
+<%--            </fieldset>--%>
+<%--        </form>--%>
         <div>
             <h3 style="text-align:center;color:black">查询结果</h3>
         </div>

@@ -38,6 +38,11 @@
       <fieldset>
         <legend>登录信息</legend>
         <table class="formtable" style="width:50%">
+          <c:if test="${requestScope.msg!=null}">
+            <tr>
+              <td colspan="2">${requestScope.msg}</td>
+            </tr>
+          </c:if>
           <tr>
             <td>账号名:</td>
             <td>

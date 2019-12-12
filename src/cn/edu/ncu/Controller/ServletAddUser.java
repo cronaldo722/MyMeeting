@@ -21,7 +21,11 @@ public class ServletAddUser extends HttpServlet {
         user.setPhone((Integer.parseInt( request.getParameter("phone"))));
         UserService userService=new UserServiceImpl();
         if(userService.addUser(user)) {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            request.setAttribute("msg", "[注册成功请登录]");
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }else {
+            request.setAttribute("error", "此用户名已存在，请更换用户名注册");
+            request.getRequestDispatcher("/register.jsp").forward(request, response);
         }
 
     }
