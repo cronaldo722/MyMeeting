@@ -38,9 +38,7 @@ public class ServletAddMeeting extends HttpServlet {
         );
         IMeetingService meetingService=new MeetingServiceImpl();
         meetingService.addMeeting(meeting);
-        response.sendRedirect(request.getContextPath() + "ServletViewMeeting");
-
-
+        request.getRequestDispatcher("ServletViewMeeting").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

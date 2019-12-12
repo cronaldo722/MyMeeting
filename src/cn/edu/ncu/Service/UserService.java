@@ -10,4 +10,6 @@ public interface UserService {
     public User getUser(String name,String password);
     public boolean addUser(User user);
     public List<Meeting> showMyMeetingsByUser(String username);
+    public boolean UpdataUserByUsername(String username,int role);
+    public List<User> ShowAllUsers();
 }

@@ -10,5 +10,7 @@ public interface UserDao {
     public boolean addUser(User user);
     public boolean isUsernameExists(String name);
     public List<Meeting> showMyMeetingsByUser(String username);
+    public boolean UpdataUserByUsername(String username,int role);
+    public List<User> ShowAllUsers();
 
 }

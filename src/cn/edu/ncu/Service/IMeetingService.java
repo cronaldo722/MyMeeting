@@ -11,4 +11,5 @@ public interface IMeetingService {
     public List<Meeting> getAllMeeting();
     public List<User> getMeetingUsers(String idmeeting);
     public boolean AttendMeeingById(String idmeeting,String username);
+    public boolean UpdataMeetingById(String idmeeting);
 }

@@ -17,15 +17,7 @@ public class UserServiceImpl implements UserService {
     public int login(String name, String password) {
         //返回值为0表示登录失败
         User loginUser = userDao.login(name, password);
-        if(loginUser.getRole()==1){
-            return 1;
-            //会议组织者
-        }
-        if(loginUser.getRole()==2){
-            return 2;
-            //表示为普通用户
-        }
-        return 0;
+        return loginUser.getRole();
     }
 
     @Override
@@ -42,6 +34,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Meeting> showMyMeetingsByUser(String username) {
         return userDao.showMyMeetingsByUser(username);
+    }
+
+    @Override
+    public boolean UpdataUserByUsername(String username,int role) {
+        return userDao.UpdataUserByUsername(username,role);
+    }
+
+    @Override
+    public List<User> ShowAllUsers() {
+        return userDao.ShowAllUsers();
     }
 
 }

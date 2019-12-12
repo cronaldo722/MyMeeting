@@ -9,20 +9,23 @@
             <li class="sidebar-menuitem"><a href="ServletViewMeeting">查看会议</a></li>
         </ul>
     </div>
-<%--    <c:if test="${UserLogin.role==1}">--%>
-<%--        <div class="sidebar-menugroup">--%>
-<%--            <div class="sidebar-grouptitle">人员管理</div>--%>
-<%--            <ul class="sidebar-menu">--%>
-<%--                <li class="sidebar-menuitem"><a href="reg">员工注册</a></li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--    </c:if>--%>
-    <c:if test="${UserLogin.role==1}">
+    <c:if test="${UserLogin.role==2||UserLogin.role==3}">
     <div class="sidebar-menugroup">
         <div class="sidebar-grouptitle">会议添加</div>
         <ul class="sidebar-menu">
             <li class="sidebar-menuitem"><a href="bookmeeting.jsp">新建会议</a></li>
         </ul>
     </div>
+    </c:if>
+    <c:if test="${UserLogin.role==3}">
+        <div class="sidebar-menugroup">
+            <div class="sidebar-grouptitle">管理中心</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menuitem"><a href="ShowAllUsers">用户管理</a></li>
+            </ul>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menuitem"><a href="ServletViewMeeting">会议管理</a></li>
+            </ul>
+        </div>
     </c:if>
 </div>

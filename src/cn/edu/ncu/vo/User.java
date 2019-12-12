@@ -8,7 +8,7 @@ public class User {
     private String idcard;
     private int phone;
     private String sex;
-    private int role=2;
+    private int role=1;
     //用户注册默认为普通用户
 
     public String getPassword() {

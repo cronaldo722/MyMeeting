@@ -40,5 +40,11 @@ public class MeetingServiceImpl implements IMeetingService {
         return meetingDao.AttendMeetingById(idmeeting,name);
     }
 
+    @Override
+    public boolean UpdataMeetingById(String idmeeting) {
+        MeetingDao meetingDao=new MeetingImpl();
+        return meetingDao.UpdataMeetingById(idmeeting);
+    }
+
 
 }

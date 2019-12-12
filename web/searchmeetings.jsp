@@ -37,6 +37,9 @@
 <%--        </form>--%>
         <div>
             <h3 style="text-align:center;color:black">查询结果</h3>
+            <c:if test="${requestScope.upmmsg!=null}">
+                    <p>${requestScope.upmmsg}</p>
+            </c:if>
         </div>
         <table class="listtable">
             <tr class="listheader">
@@ -46,6 +49,9 @@
                 <th>会议结束时间</th>
                 <th>会议描述</th>
                 <th>操作</th>
+                <c:if test="${sessionScope.UserLogin.role==3}">
+                <th>管理会议</th>
+                </c:if>
             </tr>
             <c:forEach items="${requestScope.Meetings}" var="m">
                 <tr>
@@ -57,6 +63,11 @@
                     <td>
                         <a class="clickbutton" href="MeetingDetail?mid=${m.idmeeting}">查看详情</a>
                     </td>
+                    <c:if test="${sessionScope.UserLogin.role==3}">
+                        <td>
+                            <a class="clickbutton" href="ManagerMeeting?mid=${m.idmeeting}">删除会议</a>
+                        </td>
+                    </c:if>
                 </tr>
             </c:forEach>
         </table>

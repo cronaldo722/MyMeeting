@@ -136,4 +136,11 @@ public class MeetingImpl implements MeetingDao {
         return false;
     }
 
+    @Override
+    public boolean UpdataMeetingById(String idmeeting) {
+        String sql="delete from meeting where  idmeeting='"+idmeeting+"';";
+        return JDBCUtil.executeUpdate(sql,null);
+
+    }
+
 }

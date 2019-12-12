@@ -13,6 +13,7 @@ public interface MeetingDao {
     public List<User> getMeetingUsers(String idmeeting);
     public boolean AttendMeetingById(String idmeeting,String username);
     public boolean isUserExits(String idmeeting,String username);
+    public boolean UpdataMeetingById(String idmeeting);
 
 
 }

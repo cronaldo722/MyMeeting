@@ -99,4 +99,40 @@ public class UserDaoImpl implements UserDao {
         }
         return null;
     }
+
+    @Override
+    public boolean UpdataUserByUsername(String username,int role) {
+        String sql="update user set role="+role+" where username='"+username+"';" ;
+        return JDBCUtil.executeUpdate(sql,null);
+    }
+
+    @Override
+    public List<User> ShowAllUsers() {
+        String sql="select *from user;";
+        ResultSet rs=JDBCUtil.executeQuery(sql);
+        List<User> Musers=new ArrayList<>();
+        try {
+            while (rs.next()){
+                User user=new User(
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("name"),
+                        rs.getString("workunit"),
+                        rs.getString("idcard"),
+                        rs.getInt("phone"),
+                        rs.getString("sex"),
+                        rs.getInt("role")
+                );
+                Musers.add(user);
+            }
+            return Musers;
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtil.closeAll(rs, JDBCUtil.pstmt, JDBCUtil.connection);
+        }
+        return null;
+    }
 }

@@ -18,12 +18,12 @@ public class ServletLogin extends HttpServlet {
         String password = request.getParameter("password");
         UserService userService=new UserServiceImpl();
         int login = userService.login(name, password);
-        if (login==0){
-            request.setAttribute("error", "用户名或者密码输入错误，请重新登录");
-            request.getRequestDispatcher("/register.jsp").forward(request, response);
-        }else if(login == 1||login==2){
+        if(login == 1||login==2||login==3){
             request.getSession().setAttribute("UserLogin",userService.getUser(name,password));
             response.sendRedirect(request.getContextPath() + "/Manager.jsp");
+        }else {
+            request.setAttribute("error", "用户名不存在或者密码输入错误，请重新登录");
+            request.getRequestDispatcher("/register.jsp").forward(request, response);
         }
 
          /*
