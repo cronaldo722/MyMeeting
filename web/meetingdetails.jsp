@@ -5,41 +5,8 @@
     <title>会议管理系统</title>
     <link rel="stylesheet" href="styles/common.css"/>
     <style type="text/css">
-        #divfrom {
-            float: left;
-            width: 200px;
-        }
-
-        #divto {
-            float: left;
-            width: 200px;
-        }
-
-        #divoperator {
-            float: left;
-            width: 50px;
-            padding: 60px 5px;
-        }
-
         #divoperator input[type="button"] {
             margin: 10px 0;
-        }
-
-        #selDepartments {
-            display: block;
-            width: 100%;
-        }
-
-        #selEmployees {
-            display: block;
-            width: 100%;
-            height: 200px;
-        }
-
-        #selSelectedEmployees {
-            display: block;
-            width: 100%;
-            height: 225px;
         }
     </style>
 </head>
@@ -93,7 +60,7 @@
                     <tr>
                         <td>参会人员：</td>
                         <td>
-                            <table class="listtable">
+                            <table class="listtable" id="targettable">
                                 <tr class="listheader">
                                     <th>姓名</th>
                                     <th>联系电话</th>
@@ -113,7 +80,10 @@
                     <tr>
                         <td class="command" colspan="2">
                             //待实现下载功能
-                            <input type="button" class="clickbutton" value="下载人员信息" onclick="">
+                            <a href="javascript:" onclick="loadExcel();">
+                                <input id="Button1" type="button" value="导出人员信息" />
+                            </a>
+<%--                            <input type="button" class="clickbutton" value="下载人员信息" onclick="">--%>
                             <input type="button" class="clickbutton" value="返回" onclick="window.history.back();"/>
                         </td>
                     </tr>
@@ -128,5 +98,6 @@
     更多问题，欢迎联系<a href="mailto:webmaster@eeg.com">管理员</a>
     <img src="images/footer.png" alt="CoolMeeting"/>
 </div>
+
 </body>
 </html>

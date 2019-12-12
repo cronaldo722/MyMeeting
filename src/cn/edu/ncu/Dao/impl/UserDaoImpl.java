@@ -1,9 +1,7 @@
 package cn.edu.ncu.Dao.impl;
 
-import cn.edu.ncu.Dao.JDBCUtil;
+import cn.edu.ncu.Util.JDBCUtil;
 import cn.edu.ncu.Dao.UserDao;
-import cn.edu.ncu.Service.IMeetingService;
-import cn.edu.ncu.Service.Impl.MeetingServiceImpl;
 import cn.edu.ncu.vo.Meeting;
 import cn.edu.ncu.vo.User;
 

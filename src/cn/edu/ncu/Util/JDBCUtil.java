@@ -1,4 +1,4 @@
-package cn.edu.ncu.Dao;
+package cn.edu.ncu.Util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
