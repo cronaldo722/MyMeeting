@@ -19,9 +19,9 @@ public class ServletShowMyMeetings extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user=(User)request.getSession().getAttribute("UserLogin");
         UserService userService=new UserServiceImpl();
-        List<Meeting> MyMeetings=new ArrayList<>();
+        List<Meeting> MyMeetings;
         MyMeetings=userService.showMyMeetingsByUser(user.getUsername());
-        System.out.println(MyMeetings);
+        //System.out.println(MyMeetings);测试会议列表是否获取成功
         request.setAttribute("mymts",MyMeetings);
         request.getRequestDispatcher("/mymeetings.jsp").forward(request, response);
     }

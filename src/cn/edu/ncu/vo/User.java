@@ -8,7 +8,8 @@ public class User {
     private String idcard;
     private int phone;
     private String sex;
-    private int role;
+    private int role=2;
+    //用户注册默认为普通用户
 
     public String getPassword() {
         return password;
@@ -89,5 +90,10 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return this.getName()+"-"+this.getUsername()+"-"+this.getPhone()+"";
     }
 }

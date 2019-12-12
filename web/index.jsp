@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Cronaldo7
@@ -21,10 +22,11 @@
   </div>
   <div class="header-title">
     欢迎访问Meeting会议管理系统
+
   </div>
   <div class="header-quicklink">
-<%--    欢迎您，<strong>admin</strong>--%>
-<%--    <a href="SevletQuit">[退出登录]</a>--%>
+
+
   </div>
 </div>
 <div class="page-body">
@@ -39,13 +41,13 @@
           <tr>
             <td>账号名:</td>
             <td>
-              <input type="text" name="name">
+              <input type="text" name="name"/>
             </td>
           </tr>
           <tr>
             <td>密码:</td>
             <td>
-              <input type="password" name="password">
+              <input type="password" name="password"/>
             </td>
           </tr>
           <tr>

@@ -47,7 +47,7 @@ public class UserDaoImpl implements UserDao {
             return false;
         }else {
             Object[] obs={user.getUsername(),user.getPassword(),user.getName(),user.getWorkunit(),user.getIdcard(),user.getPhone(),user.getSex(),user.getRole()};
-            String sql="INSERT INTO employee(id,password,username,workunit,idcard,phone,sex,role) VALUES (?,?,?,?,?,?,?,?);";
+            String sql="INSERT INTO user(username,password,name,workunit,idcard,phone,sex,role) VALUES (?,?,?,?,?,?,?,?);";
             return JDBCUtil.executeUpdate(sql,obs);
         }
 
@@ -59,7 +59,7 @@ public class UserDaoImpl implements UserDao {
         ResultSet rs=JDBCUtil.executeQuery(sql);
         try{
             if(rs.next())
-                return false;
+                return true;
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -68,7 +68,7 @@ public class UserDaoImpl implements UserDao {
         }finally {
             JDBCUtil.closeAll(rs, JDBCUtil.pstmt, JDBCUtil.connection);
         }
-        return true;
+        return false;
     }
 
     @Override

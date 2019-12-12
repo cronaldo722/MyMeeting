@@ -18,21 +18,21 @@
             <fieldset>
                 <legend>员工信息</legend>
                 <table class="formtable" style="width:50%">
-                    <c:if test="${error!=null}">
+                    <c:if test="${requestScope.error!=null}">
                         <tr>
-                            <td colspan="2">${error}</td>
+                            <td colspan="2">${requestScope.error}</td>
                         </tr>
                     </c:if>
                     <tr>
                         <td>姓名：</td>
                         <td>
-                            <input type="text" id="username" name="username" maxlength="20"/>
+                            <input type="text" id="username" name="name" maxlength="20"/>
                         </td>
                     </tr>
                     <tr>
                         <td>账户名：</td>
                         <td>
-                            <input type="text" id="accountname" name="accountname" maxlength="20"/>
+                            <input type="text" id="accountname" name="username" maxlength="20"/>
                         </td>
                     </tr>
                     <tr>

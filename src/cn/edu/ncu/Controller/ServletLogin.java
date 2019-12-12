@@ -20,7 +20,7 @@ public class ServletLogin extends HttpServlet {
         int login = userService.login(name, password);
         if (login==0){
             request.setAttribute("error", "用户名或者密码输入错误，请重新登录");
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/register.jsp").forward(request, response);
         }else if(login == 1||login==2){
             request.getSession().setAttribute("UserLogin",userService.getUser(name,password));
             response.sendRedirect(request.getContextPath() + "/Manager.jsp");

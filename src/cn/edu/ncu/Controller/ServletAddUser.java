@@ -15,8 +15,8 @@ import java.io.IOException;
 public class ServletAddUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user=new User();
-        user.setName(request.getParameter("username"));
-        user.setUsername(request.getParameter("accontname"));
+        user.setName(request.getParameter("name"));
+        user.setUsername(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
         user.setPhone((Integer.parseInt( request.getParameter("phone"))));
         UserService userService=new UserServiceImpl();
