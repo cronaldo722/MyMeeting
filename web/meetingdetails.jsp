@@ -60,7 +60,7 @@
                     <tr>
                         <td>参会人员：</td>
                         <td>
-                            <table class="listtable" id="targettable">
+                            <table class="listtable" id="table1">
                                 <tr class="listheader">
                                     <th>姓名</th>
                                     <th>联系电话</th>
@@ -79,10 +79,7 @@
                     <tr>
                     <tr>
                         <td class="command" colspan="2">
-                            //待实现下载功能
-                            <a href="javascript:" onclick="loadExcel();">
-                                <input id="Button1" type="button" value="导出人员信息" />
-                            </a>
+                            <button id="btn" onclick="btn_export()">导出人员信息</button>
 <%--                            <input type="button" class="clickbutton" value="下载人员信息" onclick="">--%>
                             <input type="button" class="clickbutton" value="返回" onclick="window.history.back();"/>
                         </td>
@@ -98,6 +95,14 @@
     更多问题，欢迎联系<a href="mailto:webmaster@eeg.com">管理员</a>
     <img src="images/footer.png" alt="CoolMeeting"/>
 </div>
-
+<script src="js/xlsx.full.min.js"></script>
+<script src="js/export.js"></script>
+<script>
+    function btn_export() {
+        var table1 = document.querySelector("#table1");
+        var sheet = XLSX.utils.table_to_sheet(table1);//将一个table对象转换成一个sheet对象
+        openDownloadDialog(sheet2blob(sheet),'人员信息.xlsx');
+    }
+</script>
 </body>
 </html>
