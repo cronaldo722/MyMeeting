@@ -63,6 +63,7 @@ public class JDBCUtil {
         return  DriverManager.getConnection( URL,USERNAME,PASSWORD ) ;
     }
 
+
     public static PreparedStatement createPreParedStatement(String sql,Object[] params) throws ClassNotFoundException, SQLException {
         pstmt = getConnection() .prepareStatement( sql) ;
         if(params!=null ) {
