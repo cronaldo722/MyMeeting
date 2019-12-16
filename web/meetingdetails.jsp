@@ -17,7 +17,12 @@
     <div class="page-content">
         <div class="content-nav">
             会议详情
-            <a href="AttendMeeting?mid=${mt.idmeeting}">【加入会议】</a>
+            <a href="AttendMeeting?mid=${mt.idmeeting}">【加入会议】</a><br>
+            会议二维码：
+
+        </div>
+        <div id="qrcode" style="width: 100px;height: 100">
+
         </div>
         <form>
             <fieldset>
@@ -95,6 +100,22 @@
     更多问题，欢迎联系<a href="mailto:webmaster@eeg.com">管理员</a>
     <img src="images/footer.png" alt="CoolMeeting"/>
 </div>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/qrcode.min.js"></script>
+<script>
+    window.onload=function(){
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 100,//设置宽高
+            height : 100
+        });
+        qrcode.makeCode("这是二维码");
+        <%--document.getElementById("send").onclick =function(){--%>
+        <%--    qrcode.makeCode(${mt.idmeeting});--%>
+        <%--}--%>
+    }
+
+
+</script>
 <script src="js/xlsx.full.min.js"></script>
 <script src="js/export.js"></script>
 <script>
