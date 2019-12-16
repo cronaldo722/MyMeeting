@@ -108,7 +108,7 @@
             width : 100,//设置宽高
             height : 100
         });
-        qrcode.makeCode("这是二维码");
+        qrcode.makeCode("${mt.idmeeting}");
         <%--document.getElementById("send").onclick =function(){--%>
         <%--    qrcode.makeCode(${mt.idmeeting});--%>
         <%--}--%>
