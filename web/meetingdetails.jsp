@@ -19,9 +19,9 @@
             会议详情
             <a href="AttendMeeting?mid=${mt.idmeeting}">【加入会议】</a><br>
             会议二维码：
-
         </div>
-        <div id="qrcode" style="width: 100px;height: 100">
+        <!-- 二维码生成   -->
+        <div id="qrcode" style="width: 100px;height: 100px">
 
         </div>
         <form>
@@ -109,9 +109,6 @@
             height : 100
         });
         qrcode.makeCode("${mt.idmeeting}");
-        <%--document.getElementById("send").onclick =function(){--%>
-        <%--    qrcode.makeCode(${mt.idmeeting});--%>
-        <%--}--%>
     }
 
 
