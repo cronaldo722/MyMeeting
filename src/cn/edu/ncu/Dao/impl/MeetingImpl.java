@@ -135,7 +135,7 @@ public class MeetingImpl implements MeetingDao {
         }
         return false;
     }
-
+//只是
     @Override
     public boolean UpdataMeetingById(String idmeeting) {
         String sql="delete from meeting where  idmeeting='"+idmeeting+"';";
